@@ -8,13 +8,11 @@ function App() {
     try {
       e.preventDefault();
       alert("Task added successfully!");
-      setTask(task);
+      setTask('');
       console.log(task);
     } catch (error) {
       console.log(error);
     }
-  }
-  const handleReset = () => {
   }
   return (
     <>
@@ -24,7 +22,7 @@ function App() {
           <input type="text" placeholder='Enter your task here!' className='w-[80%] rounded-xl px-2 mx-2 shadow-xl outline-0'
           value={task}
           onChange={e => setTask(e.target.value)}/>
-          <button className='bg-blue-600 p-4 rounded-4xl w-[15%] text-white cursor-pointer' onClick={handleReset}>Add</button>
+          <button className='bg-blue-600 p-4 rounded-4xl w-[15%] text-white cursor-pointer'>Add</button>
         </form>
       </MainForm>
     </>
