@@ -3,7 +3,7 @@ import './App.css'
 import MainForm from './components/MainForm.jsx'
 
 // id for task
-  let id = 0
+let id = 0
 
 function App() {
   // state to show task
@@ -11,7 +11,7 @@ function App() {
   // state to save task
   const [tasks, setTasks] = useState([]);
   // on submit handler
-  const onSubmitHandler = async (e) => {
+  const onSubmitHandler = (e) => {
     try {
       e.preventDefault();
       alert("Task added successfully!");
@@ -34,7 +34,7 @@ function App() {
           <button className='bg-blue-600 p-4 rounded-4xl w-[15%] text-white cursor-pointer'>Add</button>
         </form>
         { tasks.map(task => (
-          <h3 key={task.id} className='m-auto'>{task.task}</h3>
+          <h3 key={task.id} className='w-[80%] m-auto my-[2%]'>{task.task}</h3>
         ))}
       </MainForm>
     </>
