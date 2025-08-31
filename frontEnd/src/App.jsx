@@ -35,9 +35,9 @@ function App() {
           <button className='bg-blue-600 p-4 rounded-4xl w-[15%] text-white cursor-pointer'>Add</button>
         </form>
         { tasks.map(task => (
-          <div className='w-[80%] m-auto my-[2%]' key={task.id} >
-            <h3>{task.task}</h3>
-            <span><img src={remove}></img></span>
+          <div className='flex w-[80%] m-auto my-[2%]' key={task.id} >
+            <h2>{task.task}</h2>
+            <span className='ml-auto cursor-pointer'><img src={remove} className=' h-5' /></span>
           </div>
         ))}
       </MainForm>
