@@ -3,14 +3,21 @@ import './App.css'
 import MainForm from './components/MainForm.jsx'
 
 function App() {
+  // state to show task
   const [showTask, setShowTask] = useState('');
+  // id for task
+  let id = 0
+  // state to save task
   const [task, setTask] = useState([]);
-  const onSubmitHandler = (e) => {
+  // on submit handler
+  const onSubmitHandler = async (e) => {
     try {
       e.preventDefault();
       alert("Task added successfully!");
-      setTask('');
-      console.log();
+      await setTask([
+        ...task, {id: id++, task: showTask}
+      ]);
+      console.log(task);
     } catch (error) {
       console.log(error);
     }
