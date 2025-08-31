@@ -4,6 +4,7 @@ import MainForm from './components/MainForm.jsx'
 
 function App() {
   const [showTask, setShowTask] = useState('');
+  const [task, setTask] = useState([]);
   const onSubmitHandler = (e) => {
     try {
       e.preventDefault();
