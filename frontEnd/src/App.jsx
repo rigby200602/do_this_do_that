@@ -3,7 +3,7 @@ import './App.css'
 import MainForm from './components/MainForm.jsx'
 
 function App() {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState([]);
   const onSubmitHandler = (e) => {
     try {
       e.preventDefault();
