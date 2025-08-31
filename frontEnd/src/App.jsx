@@ -2,22 +2,23 @@ import { useState } from 'react'
 import './App.css'
 import MainForm from './components/MainForm.jsx'
 
+// id for task
+  let id = 0
+
 function App() {
   // state to show task
   const [showTask, setShowTask] = useState('');
-  // id for task
-  let id = 0
   // state to save task
-  const [task, setTask] = useState([]);
+  const [tasks, setTasks] = useState([]);
   // on submit handler
   const onSubmitHandler = async (e) => {
     try {
       e.preventDefault();
       alert("Task added successfully!");
-      await setTask([
-        ...task, {id: id++, task: showTask}
+      setTasks([
+        ...tasks, {id: id++, task: showTask}
       ]);
-      console.log(task);
+      console.log(tasks.id)
     } catch (error) {
       console.log(error);
     }
@@ -32,6 +33,9 @@ function App() {
           onChange={e => {setShowTask(e.target.value)}}/>
           <button className='bg-blue-600 p-4 rounded-4xl w-[15%] text-white cursor-pointer'>Add</button>
         </form>
+        { tasks.map(task => (
+          <h3 key={task.id} className='m-auto'>{task.task}</h3>
+        ))}
       </MainForm>
     </>
   )
