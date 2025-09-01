@@ -28,6 +28,7 @@ function App() {
   // delete task
   const deleteTask = (task) => {
     setTasks(tasks.filter(t => t.id !== task.id));
+    alert("Task deleted successfully!");
   }
   return (
     <>
