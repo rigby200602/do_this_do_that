@@ -25,6 +25,10 @@ function App() {
       console.log(error);
     }
   }
+  // delete task
+  const deleteTask = (task) => {
+    setTasks(tasks.filter(t => t.id !== task.id));
+  }
   return (
     <>
       <MainForm>
@@ -38,7 +42,7 @@ function App() {
         { tasks.map(task => (
           <div className='flex w-[80%] m-auto my-[2%]' key={task.id} >
             <h2>{task.task}</h2>
-            <span className='ml-auto cursor-pointer'><img src={remove} className=' h-5' /></span>
+            <span className='ml-auto cursor-pointer' onClick={() => deleteTask(task)} ><img src={remove} className=' h-5' /></span>
           </div>
         ))}
       </MainForm>
